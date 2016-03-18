@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Bootstrap Example</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  
+  <link rel="stylesheet" href="theCSSFile.css" type="text/css" />
+
+<style>
+
+</style>
+  
+
+</head>
+
+<body>
+
+<div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" Id = "searchopId"name = "searchQuery" class="form-control input-lg" placeholder="Search" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+</div>
+</div>
+
+<div class = "container" ng-app="myApp" ng-controller="customersCtrl"> 
+<div id = "staticTable">
+<table class = "table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Occupation</th>
+      <th>Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="x in names" ng-click="go(x)">
+      <td>{{ x.firstName }} {{ x.surname}}</td>
+      <td>{{ x.occupation }}</td>
+      <td>{{ x.company }}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<div id = "moreInfo">
+  
+  <h3>{{ newdat.firstName }} {{ newdat.surname}}</h2>
+  <img src = "{{ newdat.portrait }}">
+  <h4>{{ newdat.occupation }} </h4>
+  <h4>{{ newdat.company }} </h4>
+  <br>
+  <h4>{{ newdat.motto }} </h4>
+</div>
+</div>
+
+
+<script>
+var app = angular.module('myApp', []);
+
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://private-a73e-aquentuxsociety.apiary-mock.com/members")
+    .then(function (response) {$scope.names = response.data;});
+
+   $scope.go = function(ai) {
+  console.log(ai);
+  $scope.newdat = ai;
+};
+    
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+
+#custom-search-input {
+    position: fixed;
+    top: 100px;
+    left: 300px;
+    width: 900px;
+}
+
+#moreInfo {
+    position: fixed;
+    top: 200px;
+    left: 900px;
+    width: 300px;
+    height: 350px;
+    overflow: auto;
+}
+
+#staticTable {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    width: 500px;
+    height: 300px;
+    overflow: auto;
+}
