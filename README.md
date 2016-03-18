@@ -1,7 +1,7 @@
 
 
 ## CodingChallenge
-AngularJS-Node-Express based project
+AngularJS - based project
 
 
 ## Usage
