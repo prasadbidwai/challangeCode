@@ -35,8 +35,19 @@ app.controller('displayCtrlr', function($scope, $http) {
 
     $scope.updateMoreInfo = function() {
 
-        $('#dynatable').find('tr').click(function() {
-            $scope.newdat = (json[$(this).index()]);
+         $("#dynatable tr").click(function(){
+         $(this).addClass('selected').siblings().removeClass('selected');    
+            var value=$(this).find('td:first').html();
+            var value2=$(this).find("td").eq(1).html();
+            
+            for(var i = 0 ; i < json.length ; i++)
+            {
+                if(value == json[i].firstName && value2 == json[i].surname)
+                {
+                    break;
+                }
+            }
+            $scope.newdat = (json[i]);
         });
 
     }
