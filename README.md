@@ -3,9 +3,5 @@
 ## CodingChallenge
 AngularJS - based project
 
-
-## Usage
-
-
-### Tools
-Nodeclipse
+### Tools & Technologies: 
+Ajax, HTML 5, CSS, JavaScript, Sublime 
