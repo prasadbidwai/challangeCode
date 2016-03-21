@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Loading All Javascript Libraries-->
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js ">
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.dynatable.js">
+    </script>
+    <script src="resources/js/app.js"></script>      
+
+    <!-- Loading All Stylesheets-->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/thecssfile.css" type="text/css"/>
+</head>
+
+<body>
+    <!--the main div to apply single controller-->
+    <div id="allThat" ng-app="myApp" ng-controller="displayCtrlr">
+
+        <div id="mainTable">
+            <!--div for displaying list of members pulled from API-->
+            <table id='dynatable' class="dynatable table table-condensed table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th data-dynatable-column="firstName">Name</th>
+                        <th data-dynatable-column="surname">surname</th>
+                        <th data-dynatable-column="occupation">occupation</th>
+                        <th data-dynatable-column="company">company</th>
+                    </tr>
+                </thead>
+
+                <tbody ng-click="updateMoreInfo()">
+                </tbody>
+
+            </table>
+        </div>
+
+        <div id="moreInfo">
+            <!--div for detailed Information of clicked member-->
+            <br>
+            <br>
+            <h3 style="margin-left: 10px">{{ newdat.firstName }} {{ newdat.surname}}</h3>
+            <br>
+            <img src="{{ newdat.portrait }}" style="margin-left: 10px">
+            <br>
+            <h4 style="margin-left: 10px">{{ newdat.occupation }} </h4>
+            <h4 style="margin-left: 10px">{{ newdat.company }} </h4>
+            <br>
+            <h4 style="margin-left: 10px">{{ newdat.motto }} </h4>
+        </div>
+
+    </div>
+</body>
+
+</html>
