@@ -19,6 +19,10 @@ app.controller('displayCtrlr', function($scope, $http) {
                 type: 'GET',
             })
             .done(function(data) {
+
+                $('#mainTable').css("display","block");
+                $('.spinner').css("display","none");
+
                 var _this = this;
                 json = data;
                 $('#dynatable').dynatable({
