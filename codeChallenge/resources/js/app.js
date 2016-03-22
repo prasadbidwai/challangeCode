@@ -33,6 +33,10 @@ app.controller('displayCtrlr', function($scope, $http) {
 
     });
 
+/* 
+ * This function will set the display elements of clicked member to show in moreInfo div.
+ */
+
     $scope.updateMoreInfo = function() {
 
          $("#dynatable tr").click(function(){
