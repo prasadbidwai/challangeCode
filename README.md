@@ -1,6 +1,6 @@
 
 
-## CodingChallenge
+## CodeChallenge
 AngularJS - based project
 
 ### Tools & Technologies: 
